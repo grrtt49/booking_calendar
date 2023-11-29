@@ -267,7 +267,7 @@ class _BookingCalendarMainState extends State<BookingCalendarMain> {
                             );
                       }
 
-                      if (!snapshot.hasData) {
+                      if (!snapshot.hasData || snapshot.connectionState == ConnectionState.waiting) {
                         return widget.loadingWidget ??
                             const Center(child: CircularProgressIndicator());
                       }
